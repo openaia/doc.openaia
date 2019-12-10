@@ -12,5 +12,5 @@ SERIAL_CONSOLES = "115200;ttyS2"
 PREFERRED_PROVIDER_virtual/bootloader ?= "u-boot"
 SPL_BINARY ?= "idbloader.img"
 
-IMAGE_FSTYPES = "rockchip-gpt-img"
+IMAGE_FSTYPES += "rockchip-gpt-img"
 IMAGE_CLASSES += "rockchip-gpt-img"
