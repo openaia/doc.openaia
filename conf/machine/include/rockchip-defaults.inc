@@ -3,8 +3,6 @@
 # kernel
 PREFERRED_PROVIDER_virtual/kernel ?= "linux-stable"
 LINUX_VERSION_EXTENSION ?= "-rockchip"
-KBUILD_DEFCONFIG = "multi_v7_defconfig"
-KERNEL_IMAGETYPE = "zImage"
 
 # xserver
 PREFERRED_PROVIDER_virtual/xserver = "xserver-xorg"

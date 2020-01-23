@@ -6,10 +6,16 @@ HOMEPAGE = "https://developer.trustedfirmware.org/"
 LICENSE = "BSD-3-Clause"
 LIC_FILES_CHKSUM = "file://docs/license.rst;md5=189505435dbcdcc8caa63c46fe93fa89"
 
+# Rockchip RK3399 compiles some M0 firmware which requires an arm-none-eabi GCC
+# toolchain
+DEPENDS_rk3399 = "virtual/arm-none-eabi-gcc"
+
 PROVIDES = "virtual/atf"
 
 BRANCH = "master"
-SRC_URI = "git://git.trustedfirmware.org/TF-A/trusted-firmware-a.git;protocol=http;branch=${BRANCH}"
+SRC_URI = "git://git.trustedfirmware.org/TF-A/trusted-firmware-a.git;protocol=http;branch=${BRANCH} \
+           file://0001-rockchip-Prevent-macro-expansion-in-paths.patch \
+           "
 SRCREV = "a04808c16cfc126d9fe572ae7c4b5a3d39de5796"
 
 S = "${WORKDIR}/git"
