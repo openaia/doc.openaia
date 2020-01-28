@@ -15,7 +15,7 @@ Status of supported boards:
 --------------------------
 	builds and boots gpt image:
 		rock-pi-4
-		tinker-rk3288
+		tinker-board
 		vyasa-rk3288
 		firefly-rk3288
 	builds:
