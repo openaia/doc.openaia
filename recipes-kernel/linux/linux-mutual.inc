@@ -4,7 +4,10 @@ LICENSE = "GPLv2"
 
 LIC_FILES_CHKSUM = "file://COPYING;md5=bbea815ee2795b2f4230826c0c6b8814"
 
-SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;branch=${KBRANCH}"
+SRC_URI = " \
+    git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git;branch=${KBRANCH} \
+    file://0001-menuconfig-mconf-cfg-Allow-specification-of-ncurses-.patch \
+    "
 
 inherit kernel
 require recipes-kernel/linux/linux-yocto.inc
