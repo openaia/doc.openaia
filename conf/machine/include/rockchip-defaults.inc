@@ -21,3 +21,8 @@ XSERVER = " \
 
 # misc
 IMAGE_FSTYPES += "ext4"
+
+# boot device (sd-card/emmc)
+RK_BOOT_DEVICE ??= "mmcblk0"
+WICVARS_append = " RK_BOOT_DEVICE"
+

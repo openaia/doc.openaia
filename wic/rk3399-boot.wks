@@ -15,10 +15,10 @@
 #   root        262144          -
 #
 
-part loader1    --align 32     --size 4000K            --source rawcopy --sourceparams="file=idbloader.img"
-part reserved1  --align 4032   --size 64K
-part reserved2  --align 4096   --size 4096K
-part loader2    --align 8192   --size 4096K            --source rawcopy --sourceparams="file=u-boot.itb"
-part atf        --align 12288  --size 4096K
-part /boot      --align 16384  --size=114688K --active --source bootimg-partition --fstype=vfat --label boot --sourceparams="loader=u-boot"
+part loader1    --align 32     --size 4000K            --ondisk ${RK_BOOT_DEVICE} --source rawcopy --sourceparams="file=idbloader.img"
+part reserved1  --align 4032   --size 64K              --ondisk ${RK_BOOT_DEVICE}
+part reserved2  --align 4096   --size 4096K            --ondisk ${RK_BOOT_DEVICE}
+part loader2    --align 8192   --size 4096K            --ondisk ${RK_BOOT_DEVICE} --source rawcopy --sourceparams="file=u-boot.itb"
+part atf        --align 12288  --size 4096K            --ondisk ${RK_BOOT_DEVICE}
+part /boot      --align 16384  --size=114688K --active --ondisk ${RK_BOOT_DEVICE} --source bootimg-partition --fstype=vfat --label boot --sourceparams="loader=u-boot"
 
