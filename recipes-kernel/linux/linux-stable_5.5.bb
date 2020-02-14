@@ -1,7 +1,7 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}-${PV}:"
 
-LINUX_VERSION ?= "5.5.1"
+LINUX_VERSION ?= "5.5.3"
 KBRANCH ?= "linux-5.5.y"
-SRCREV ?= "70c707aae3e586f6ebc677ad733a9c3cea32f7ac"
+SRCREV ?= "deff2fcb0de9352c271d6eafe60178f0e085180b"
 
 require linux-mutual.inc
