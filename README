@@ -13,7 +13,7 @@ Dependencies:
 
 Status of supported boards:
 --------------------------
-	builds and boots gpt image:
+	builds and boots wic image:
 		rock-pi-4
 		tinker-board
 		tinker-board-s
@@ -23,8 +23,6 @@ Status of supported boards:
 		marsboard-rk3066
 		radxarock
 		rock2-square
-	doesn't build:
-		veyron-speedy
 
 Maintenance:
 -----------
