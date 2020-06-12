@@ -11,6 +11,10 @@ Dependencies:
 	layers: meta
 	branch: matched branches (e.g. master, sumo, ...)
 
+	URI: git://git.yoctoproject.org/meta-arm
+	layers: meta-arm
+	branch: matched branches (e.g. master, sumo, ...)
+
 Status of supported boards:
 --------------------------
 	builds and boots wic image:
