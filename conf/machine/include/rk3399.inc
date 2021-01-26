@@ -5,8 +5,8 @@ SOC_FAMILY = "rk3399"
 
 DEFAULTTUNE ?= "cortexa72-cortexa53-crypto"
 
-require conf/machine/include/tune-cortexa72-cortexa53.inc
 require conf/machine/include/soc-family.inc
+require conf/machine/include/tune-cortexa72-cortexa53.inc
 require conf/machine/include/rockchip-defaults.inc
 
 KBUILD_DEFCONFIG ?= "defconfig"
