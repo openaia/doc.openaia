@@ -3,4 +3,4 @@
 DEPENDS_append_rk3399 = " virtual/arm-none-eabi-gcc-native"
 
 COMPATIBLE_MACHINE_append_rk3399 = "|rk3399"
-
+COMPATIBLE_MACHINE_append_rk3328 = "|rk3328"
