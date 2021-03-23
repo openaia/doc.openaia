@@ -31,7 +31,7 @@ Status of supported boards:
 Maintenance:
 -----------
 	Please send pull requests, patches, comments, or questions to the
-	yocto mailing list (yocto@yoctoproject.org) CCing the maintainer
+	yocto mailing list (yocto@lists.yoctoproject.org) CCing the maintainer
 
 	When sending patches, please make sure the email subject line includes
 	"[meta-rockchip][PATCH]" and follow the community's patch submission
@@ -42,7 +42,7 @@ Maintenance:
 	For example, to send your most recent commit (i.e. just one patch),
 	please use something like:
 		git format-patch -M --subject-prefix="meta-rockchip][PATCH" HEAD^
-		git send-email --to yocto@yoctoproject.org --cc twoerner@gmail.com <your patch file>
+		git send-email --to yocto@lists.yoctoproject.org --cc twoerner@gmail.com <your patch file>
 
 Maintainer:
 ----------
