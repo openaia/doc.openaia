@@ -8,3 +8,9 @@ COMPATIBLE_MACHINE_tinker-board-s = "tinker-board-s"
 COMPATIBLE_MACHINE_rock-pi-4 = "rock-pi-4"
 COMPATIBLE_MACHINE_nanopi-m4 = "nanopi-m4"
 COMPATIBLE_MACHINE_nanopi-m4-2gb = "nanopi-m4-2gb"
+COMPATIBLE_MACHINE_rock64 = "rock64"
+
+FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
+
+# indeed applicable to all rk3328 boards
+SRC_URI_append_rock64 = " file://0001-ayufan-dtsi-rk3328-add-mmc0-mmc1-aliases.patch"
