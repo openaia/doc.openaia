@@ -19,8 +19,6 @@ TFA_BUILD_TARGET = "bl31"
 UBOOT_SUFFIX ?= "itb"
 UBOOT_ENTRYPOINT ?= "0x06000000"
 
-SERIAL_CONSOLES = "115200;ttyS2"
-
 PREFERRED_PROVIDER_virtual/bootloader ?= "u-boot"
 SPL_BINARY ?= "idbloader.img"
 
