@@ -1,0 +1,27 @@
+# common meta-rockchip wic/wks items
+
+IMAGE_FSTYPES += "wic wic.bmap"
+WKS_FILE_DEPENDS ?= " \
+	mtools-native \
+	dosfstools-native \
+	virtual/bootloader \
+	virtual/kernel \
+	"
+IMAGE_BOOT_FILES = " \
+	${KERNEL_IMAGETYPE} \
+	${@bb.utils.contains('KERNEL_IMAGETYPE', 'fitImage', '', '${KERNEL_DEVICETREE}', d)} \
+	"
+
+# use the first-defined <baud>;<device> pair in SERIAL_CONSOLES
+# for the console parameter in the wks files
+RK_CONSOLE_BAUD ?= "${@d.getVar('SERIAL_CONSOLES').split(';')[0]}"
+RK_CONSOLE_DEVICE ?= "${@d.getVar('SERIAL_CONSOLES').split(';')[1].split()[0]}"
+
+# boot device (sd-card/emmc)
+RK_BOOT_DEVICE ??= "mmcblk0"
+
+WICVARS_append = " \
+	RK_BOOT_DEVICE \
+	RK_CONSOLE_BAUD \
+	RK_CONSOLE_DEVICE \
+	"

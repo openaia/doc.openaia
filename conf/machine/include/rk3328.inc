@@ -8,6 +8,7 @@ DEFAULTTUNE ?= "cortexa53-crypto"
 require conf/machine/include/soc-family.inc
 require conf/machine/include/tune-cortexa53.inc
 require conf/machine/include/rockchip-defaults.inc
+require conf/machine/include/rockchip-wic.inc
 
 KBUILD_DEFCONFIG ?= "defconfig"
 KERNEL_CLASSES = "kernel-fitimage"
