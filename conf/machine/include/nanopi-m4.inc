@@ -1,7 +1,7 @@
 # Copyright (C) 2021 Blade SAS
 # Common definitions for all NanoPi M4 RK3399 board variants
 
-require rk3399.inc
+require conf/machine/include/rk3399.inc
 
 MACHINE_FEATURES += "usbhost serial"
 
