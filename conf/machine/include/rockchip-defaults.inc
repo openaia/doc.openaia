@@ -22,4 +22,3 @@ XSERVER = " \
 
 # misc
 SERIAL_CONSOLES ?= "1500000;ttyS2"
-IMAGE_FSTYPES += "ext4"
