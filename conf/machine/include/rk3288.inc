@@ -13,5 +13,4 @@ KBUILD_DEFCONFIG ?= "multi_v7_defconfig"
 KERNEL_IMAGETYPE = "zImage"
 
 PREFERRED_PROVIDER_virtual/bootloader ?= "u-boot"
-SPL_BINARY ?= "idbloader.img"
-
+UBOOT_SUFFIX ?= "bin"

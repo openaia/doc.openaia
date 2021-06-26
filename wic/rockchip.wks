@@ -1,3 +1,4 @@
+# Copyright (C) 2019,2020 Garmin Ltd. or its subsidiaries
 # Copyright (C) 2021 Trevor Woerner
 # Released under the MIT license (see COPYING.MIT for the terms)
 #
@@ -13,11 +14,13 @@
 #   atf         24576           8192
 #   boot        32768           229376
 #   root        262144          -           (suggested)
-#
 
-part loader1    --offset 32     --fixed-size 4000K            --ondisk ${RK_BOOT_DEVICE} --source rawcopy --sourceparams="file=idbloader.img"
+part loader1    --offset 32     --fixed-size 4000K            --ondisk ${RK_BOOT_DEVICE} --source rawcopy                                      --sourceparams="file=${SPL_BINARY}"
 part reserved1  --offset 4032   --fixed-size 64K              --ondisk ${RK_BOOT_DEVICE}
 part reserved2  --offset 4096   --fixed-size 4096K            --ondisk ${RK_BOOT_DEVICE}
-part loader2    --offset 8192   --fixed-size 4096K            --ondisk ${RK_BOOT_DEVICE} --source rawcopy --sourceparams="file=u-boot.itb"
+part loader2    --offset 8192   --fixed-size 4096K            --ondisk ${RK_BOOT_DEVICE} --source rawcopy                                      --sourceparams="file=u-boot.${UBOOT_SUFFIX}"
 part atf        --offset 12288  --fixed-size 4096K            --ondisk ${RK_BOOT_DEVICE}
 part /boot      --offset 16384  --size       114688K --active --ondisk ${RK_BOOT_DEVICE} --source bootimg-partition --fstype=vfat --label boot --sourceparams="loader=u-boot"
+part /                                                        --ondisk ${RK_BOOT_DEVICE} --source rootfs            --fstype=ext4 --label root
+
+bootloader --ptable gpt --append="console=tty1 console=${RK_CONSOLE_DEVICE},${RK_CONSOLE_BAUD}n8 rw root=/dev/${RK_BOOT_DEVICE}p7 rootfstype=ext4 init=/sbin/init"

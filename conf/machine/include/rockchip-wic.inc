@@ -1,6 +1,9 @@
 # common meta-rockchip wic/wks items
 
+SPL_BINARY ?= "idbloader.img"
+
 IMAGE_FSTYPES += "wic wic.bmap"
+WKS_FILE = "rockchip.wks"
 WKS_FILE_DEPENDS ?= " \
 	mtools-native \
 	dosfstools-native \
@@ -24,4 +27,6 @@ WICVARS_append = " \
 	RK_BOOT_DEVICE \
 	RK_CONSOLE_BAUD \
 	RK_CONSOLE_DEVICE \
+	SPL_BINARY \
+	UBOOT_SUFFIX \
 	"

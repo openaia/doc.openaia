@@ -1,7 +1,0 @@
-# Copyright (C) 2020 Garmin Ltd. or its subsidiaries
-# Released under the MIT license (see COPYING.MIT for the terms)
-
-include rk3399-boot.wks
-part / --ondisk ${RK_BOOT_DEVICE} --source rootfs --fstype=ext4 --label root
-
-bootloader --ptable gpt --append="console=tty1 console=${RK_CONSOLE_DEVICE},${RK_CONSOLE_BAUD}n8 rw root=/dev/${RK_BOOT_DEVICE}p7 rootfstype=ext4 init=/sbin/init"

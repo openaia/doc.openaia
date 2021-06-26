@@ -9,4 +9,3 @@ KMACHINE = "nanopi-m4"
 KERNEL_DEVICETREE = "rockchip/rk3399-nanopi-m4.dtb"
 
 RK_BOOT_DEVICE = "mmcblk1"
-WKS_FILE ?= "rock-pi-4.wks"
