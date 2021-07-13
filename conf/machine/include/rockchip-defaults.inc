@@ -3,7 +3,6 @@
 # kernel
 PREFERRED_PROVIDER_virtual/kernel ?= "linux-yocto"
 KCONFIG_MODE ?= "alldefconfig"
-LINUX_VERSION_EXTENSION ?= "-rockchip"
 
 # xserver
 PREFERRED_PROVIDER_virtual/xserver = "xserver-xorg"
