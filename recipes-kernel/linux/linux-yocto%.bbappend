@@ -9,6 +9,7 @@ COMPATIBLE_MACHINE_rock-pi-4 = "rock-pi-4"
 COMPATIBLE_MACHINE_nanopi-m4 = "nanopi-m4"
 COMPATIBLE_MACHINE_nanopi-m4-2gb = "nanopi-m4-2gb"
 COMPATIBLE_MACHINE_rock64 = "rock64"
+COMPATIBLE_MACHINE_rock-pi-e = "rock-pi-e"
 
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
