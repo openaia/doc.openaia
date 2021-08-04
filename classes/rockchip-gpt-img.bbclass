@@ -37,10 +37,10 @@ do_image_rockchip_gpt_img[depends] = "parted-native:do_populate_sysroot \
 	virtual/kernel:do_deploy \
 	virtual/bootloader:do_deploy"
 
-PER_CHIP_IMG_GENERATION_COMMAND_rk3288 = "generate_rk3288_loader1_image"
-PER_CHIP_IMG_GENERATION_COMMAND_rock2-square = "generate_rock2_loader1_image"
+PER_CHIP_IMG_GENERATION_COMMAND:rk3288 = "generate_rk3288_loader1_image"
+PER_CHIP_IMG_GENERATION_COMMAND:rock2-square = "generate_rock2_loader1_image"
 
-IMAGE_CMD_rockchip-gpt-img () {
+IMAGE_CMD:rockchip-gpt-img () {
 	# Change to image directory
 	cd ${DEPLOY_DIR_IMAGE}
 

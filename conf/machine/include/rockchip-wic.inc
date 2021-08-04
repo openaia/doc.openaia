@@ -23,7 +23,7 @@ RK_CONSOLE_DEVICE ?= "${@d.getVar('SERIAL_CONSOLES').split(';')[1].split()[0]}"
 # boot device (sd-card/emmc)
 RK_BOOT_DEVICE ??= "mmcblk0"
 
-WICVARS_append = " \
+WICVARS:append = " \
 	RK_BOOT_DEVICE \
 	RK_CONSOLE_BAUD \
 	RK_CONSOLE_DEVICE \
