@@ -3,7 +3,7 @@
 
 SOC_FAMILY = "rk3066"
 
-require conf/machine/include/tune-cortexa9.inc
+require conf/machine/include/arm/armv7a/tune-cortexa9.inc
 require conf/machine/include/soc-family.inc
 require conf/machine/include/rockchip-defaults.inc
 

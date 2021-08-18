@@ -3,7 +3,7 @@
 
 SOC_FAMILY = "rk3288"
 
-require conf/machine/include/tune-cortexa17.inc
+require conf/machine/include/arm/armv7a/tune-cortexa17.inc
 require conf/machine/include/soc-family.inc
 require conf/machine/include/rockchip-defaults.inc
 
