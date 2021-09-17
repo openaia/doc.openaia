@@ -7,5 +7,3 @@ MACHINE_FEATURES += "usbhost serial"
 
 KMACHINE = "nanopi-m4"
 KERNEL_DEVICETREE = "rockchip/rk3399-nanopi-m4.dtb"
-
-RK_BOOT_DEVICE = "mmcblk1"

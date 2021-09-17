@@ -20,11 +20,7 @@ IMAGE_BOOT_FILES = " \
 RK_CONSOLE_BAUD ?= "${@d.getVar('SERIAL_CONSOLES').split(';')[0]}"
 RK_CONSOLE_DEVICE ?= "${@d.getVar('SERIAL_CONSOLES').split(';')[1].split()[0]}"
 
-# boot device (sd-card/emmc)
-RK_BOOT_DEVICE ??= "mmcblk0"
-
 WICVARS:append = " \
-	RK_BOOT_DEVICE \
 	RK_CONSOLE_BAUD \
 	RK_CONSOLE_DEVICE \
 	SPL_BINARY \
