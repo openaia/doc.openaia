@@ -12,6 +12,3 @@ COMPATIBLE_MACHINE:rock64 = "rock64"
 COMPATIBLE_MACHINE:rock-pi-e = "rock-pi-e"
 
 FILESEXTRAPATHS:prepend := "${THISDIR}/files:"
-
-# indeed applicable to all rk3328 boards
-SRC_URI:append:rock64 = " file://0001-ayufan-dtsi-rk3328-add-mmc0-mmc1-aliases.patch"
