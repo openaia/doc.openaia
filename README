@@ -45,10 +45,20 @@ Maintenance:
 		https://www.openembedded.org/wiki/Commit_Patch_Message_Guidelines
 		https://www.openembedded.org/wiki/How_to_submit_a_patch_to_OpenEmbedded
 
-	For example, to send your most recent commit (i.e. just one patch),
+        Please send changes to the yocto mailing list with [meta-rockchip] in the subject line,
+        cc'ing the maintainer.
+
+        This can be configured within the repository with following commands:
+
+        	git config sendemail.to yocto@lists.yoctoproject.org
+        	git config sendemail.cc twoerner@gmail.com
+        	git config format.subjectprefix "meta-rockchip] [PATCH"
+
+	Then, to send your most recent commit (i.e. just one patch),
 	please use something like:
-		git format-patch -M --subject-prefix="meta-rockchip][PATCH" HEAD^
-		git send-email --to yocto@lists.yoctoproject.org --cc twoerner@gmail.com <your patch file>
+
+		git format-patch -M -1
+		git send-email <your patch file>
 
 Maintainer:
 ----------
