@@ -48,7 +48,7 @@ Maintenance:
 	Please send changes to the yocto mailing list with [meta-rockchip] in the subject line,
 	cc'ing the maintainer.
 
-	This can be configured within the repository with following commands:
+	This can be configured within the repository with the following commands:
 
 		git config sendemail.to yocto@lists.yoctoproject.org
 		git config sendemail.cc twoerner@gmail.com
