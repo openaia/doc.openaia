@@ -12,3 +12,10 @@ SRC_URI += "\
     file://0001-plat_macros.S-Use-compatible-.asciz-asm-directive.patch \
     file://0001-pmu-Do-not-mark-already-defined-functions-as-weak.patch \
 "
+
+
+# code bloats with clang and results in error below now
+# | aarch64-yoe-linux-musl-ld: region `PMUSRAM' overflowed by 3928 bytes
+# this needs fixing until then use gcc
+TOOLCHAIN:rk3399 = "gcc"
+
