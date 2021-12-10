@@ -19,5 +19,3 @@ TFA_BUILD_TARGET = "bl31"
 
 UBOOT_SUFFIX ?= "itb"
 UBOOT_ENTRYPOINT ?= "0x06000000"
-
-PREFERRED_PROVIDER:virtual/bootloader ?= "u-boot"

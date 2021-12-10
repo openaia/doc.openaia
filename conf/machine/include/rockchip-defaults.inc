@@ -5,7 +5,6 @@ PREFERRED_PROVIDER_virtual/kernel ?= "linux-yocto"
 KCONFIG_MODE ?= "alldefconfig"
 
 # xserver
-PREFERRED_PROVIDER:virtual/xserver = "xserver-xorg"
 XSERVER = " \
 	xserver-xorg \
 	xserver-xorg-utils \
