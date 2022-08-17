@@ -6,6 +6,16 @@ This README file contains information on building and booting the meta-ecm BSP l
 
 Please see the corresponding sections below for details.
 
+## Required Packages for the Build Host
+To install the required packages on a Debian based distribution (Ubuntu etc) run
+
+```
+sudo apt install gawk wget git diffstat unzip texinfo gcc build-essential \
+    chrpath socat cpio python3 python3-pip python3-pexpect xz-utils \
+    debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa \
+    libsdl1.2-dev pylint xterm python3-subunit mesa-common-dev zstd liblz4-tool
+```
+
 ## Dependencies
 
 This layer depends on:
@@ -22,6 +32,11 @@ This layer depends on:
 ```
 * URI: git://git.yoctoproject.org/meta-arm
 * layers: meta-arm, meta-arm-toolchain
+* branch: matched branches (e.g. kirkstone, ...)
+```
+```
+* URI: git clone git://git.openembedded.org/meta-openembedded
+* layers: meta-oe, meta-python, meta-networking
 * branch: matched branches (e.g. kirkstone, ...)
 ```
 
@@ -44,6 +59,7 @@ In order to build an image with BSP support for a given release, you need to dow
 ~/yocto $ git clone git://git.openembedded.org/bitbake -b master
 ~/yocto $ git clone git://git.openembedded.org/openembedded-core -b kirkstone
 ~/yocto $ git clone git://git.yoctoproject.org/meta-arm -b kirkstone
+~/yocto $ git clone git://git.openembedded.org/meta-openembedded -b kirkstone
 ```
 
 And put the meta-ecm layer here too.
@@ -65,12 +81,37 @@ BBLAYERS ?= " \
   ${TOPDIR}/../meta-arm/meta-arm \
   ${TOPDIR}/../meta-arm/meta-arm-toolchain \
   ${TOPDIR}/../meta-ecm \
+  ${TOPDIR}/../meta-openembedded/meta-oe \
+  ${TOPDIR}/../meta-openembedded/meta-python \
+  ${TOPDIR}/../meta-openembedded/meta-networking \
 ```
 
 To enable a particular machine, you need to add a MACHINE line naming the BSP to the local.conf file:
 
 ```makefile
   MACHINE = "ecm0-carrier"
+```
+
+Enable systemd in your Yocto configuration by adding the following to your local.conf file
+
+```makefile
+INIT_MANAGER = "systemd"
+```
+
+Enable disto features needed to support the pacakges by adding the following to your local.conf file
+
+```makefile
+DISTRO_FEATURES:append = " bluetooth wifi"
+```
+
+To enable Wifi using wpa_supplicant
+
+Create the wpa_supplicant configuration file by running the following command on your desktop.
+This will prompt you for the passphrase for your WiFi.
+You may want to then edit the file to remove the clear-text passphrase:
+
+```shell
+wpa_passphrase 'YOUR_SSID' >  ../meta-ecm/recipes-connectivity/wpa-supplicant/files/wpa_supplicant-nl80211-wlan0.conf
 ```
 
 All supported machines can be found in meta-ecm/conf/machine.
