@@ -7,7 +7,7 @@ require recipes-bsp/u-boot/u-boot.inc
 
 SRC_URI = "git://git@github.com/edgeble/u-boot.git;protocol=ssh;branch=ecm0-v4"
 
-SRCREV = "164d013655c7bc45f55475d3033a3e2344eea6a1"
+SRCREV = "b5b030bdc93c1f3da43523e53017f29fc532a73e"
 
 S = "${WORKDIR}/git"
 B = "${WORKDIR}/build"
