@@ -12,7 +12,7 @@ SRC_URI = " \
 	file://rv1126-ecm0.cfg \
 	"
 
-SRCREV = "cc8e768bf0c92798b95dcf753975604f5d2697da"
+SRCREV = "8d2f439d0375b24a3134ef82dd193005c5e53f59"
 
 S = "${WORKDIR}/git"
 B = "${WORKDIR}/build"
