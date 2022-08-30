@@ -12,9 +12,11 @@ RRECOMMENDS:${PN} += " \
     ${@bb.utils.contains('DISTRO_FEATURES', 'bluetooth', 'linux-firmware-qca', '', d)} \
 "
 
-RDEPENDS:${PN} = "\
+RDEPENDS:${PN} = " \
     packagegroup-base \
     packagegroup-core-boot \
     packagegroup-core-full-cmdline \
     wireless-regdb-static \
     bluez5 \
+    i2c-tools \
+"
