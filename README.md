@@ -11,9 +11,9 @@ To install the required packages on a Debian based distribution (Ubuntu etc) run
 
 ```
 sudo apt install gawk wget git diffstat unzip texinfo gcc build-essential \
-    chrpath socat cpio python3 python3-pip python3-pexpect xz-utils \
-    debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa \
-    libsdl1.2-dev pylint xterm python3-subunit mesa-common-dev zstd liblz4-tool
+chrpath socat cpio python3 python3-pip python3-pexpect xz-utils \
+debianutils iputils-ping python3-git python3-jinja2 libegl1-mesa \
+libsdl1.2-dev pylint xterm python3-subunit mesa-common-dev zstd liblz4-tool
 ```
 
 ## Dependencies
@@ -84,6 +84,7 @@ BBLAYERS ?= " \
   ${TOPDIR}/../meta-openembedded/meta-oe \
   ${TOPDIR}/../meta-openembedded/meta-python \
   ${TOPDIR}/../meta-openembedded/meta-networking \
+  "
 ```
 
 To enable a particular machine, you need to add a MACHINE line naming the BSP to the local.conf file:
@@ -121,7 +122,7 @@ All supported machines can be found in meta-ecm/conf/machine.
 You should then be able to build a image as such:
 
 ```shell
-$ bitbake core-image-full-cmdline
+bitbake core-image-full-cmdline
 ```
 
 At the end of a successful build, you should have an .wic image in /path/to/yocto/build/tmp-glibc/deploy/\<MACHINE\>/
@@ -135,8 +136,8 @@ At the end of a successful build, you should have an .wic image in /path/to/yoct
 2. Program SD card (assume card detected at /dev/sdX)
 
 ```shell
-$ cd tmp-glibc/deploy/images/\<MACHINE\>
-$ sudo bmaptool copy --bmap core-image-full-cmdline-ecm0-carrier.wic.bmap core-image-full-cmdline-ecm0-carrier.wic.xz /dev/sdX
+cd tmp-glibc/deploy/images/\<MACHINE\>
+sudo bmaptool copy --bmap core-image-full-cmdline-ecm0-carrier.wic.bmap core-image-full-cmdline-ecm0-carrier.wic.xz /dev/sdX
 ```
 
 3. Turn On the board.
