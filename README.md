@@ -1,6 +1,6 @@
-# meta-ecm
+# meta-neu2-io
 
-Yocto BSP layer for the Edge Compute Modules.
+Yocto BSP layer for the Edgeble Neural Compute Module 2.
 
 This README file contains information on building and booting the meta-ecm BSP layers.
 
@@ -80,7 +80,7 @@ BBLAYERS ?= " \
   ${TOPDIR}/../openembedded-core/meta\
   ${TOPDIR}/../meta-arm/meta-arm \
   ${TOPDIR}/../meta-arm/meta-arm-toolchain \
-  ${TOPDIR}/../meta-ecm \
+  ${TOPDIR}/../meta-neu2k \
   ${TOPDIR}/../meta-openembedded/meta-oe \
   ${TOPDIR}/../meta-openembedded/meta-python \
   ${TOPDIR}/../meta-openembedded/meta-networking \
@@ -90,7 +90,7 @@ BBLAYERS ?= " \
 To enable a particular machine, you need to add a MACHINE line naming the BSP to the local.conf file:
 
 ```makefile
-  MACHINE = "ecm0-carrier"
+  MACHINE = "neu2-io"
 ```
 
 Enable systemd in your Yocto configuration by adding the following to your local.conf file
@@ -137,7 +137,7 @@ At the end of a successful build, you should have an .wic image in /path/to/yoct
 
 ```shell
 cd tmp-glibc/deploy/images/\<MACHINE\>
-sudo bmaptool copy --bmap core-image-full-cmdline-ecm0-carrier.wic.bmap core-image-full-cmdline-ecm0-carrier.wic.xz /dev/sdX
+sudo bmaptool copy --bmap core-image-full-cmdline-neu2-io.wic.bmap core-image-full-cmdline-neu2-io.wic.xz /dev/sdX
 ```
 
 3. Turn On the board.
@@ -148,7 +148,7 @@ sudo bmaptool copy --bmap core-image-full-cmdline-ecm0-carrier.wic.bmap core-ima
 
 The following undergo regular basic testing with their respective MACHINE types.
 
-* Edge Compute Module 0 Carrier board
+* Edgeble Neural Compute Module 2
 
 ## Maintainers
 
