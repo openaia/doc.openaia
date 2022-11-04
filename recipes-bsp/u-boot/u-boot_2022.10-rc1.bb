@@ -1,16 +1,26 @@
 SECTION = "bootloaders"
-DESCRIPTION = "U-Boot 2017.09 ECM u-boot"
+DESCRIPTION = "U-Boot 2022.10 neuk2k-uboot"
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://Licenses/README;md5=2ca5f2c35c8cc335f0a19756634782f1"
 
 require recipes-bsp/u-boot/u-boot.inc
 
-SRC_URI = "git://git@github.com/edgeble/u-boot.git;protocol=ssh;branch=ecm0-v4"
+UBOOT_BRANCH ?= "master"
 
-SRCREV = "b5b030bdc93c1f3da43523e53017f29fc532a73e"
+SRC_URI += " \
+	git://git@github.com/edgeble/u-boot-neu2k.git;protocol=ssh;branch=${UBOOT_BRANCH} \
+	file://rv1126_tee_ta_v1.12.bin \
+	"
+
+SRCREV = "319cee2d2723f77896d2b16f128846062f94d13a"
 
 S = "${WORKDIR}/git"
 B = "${WORKDIR}/build"
 do_configure[cleandirs] = "${B}"
 
-DEPENDS += "flex-native bison-native bc-native dtc-native python3-setuptools-native"
+# copy op-tee prebuild binary to u-boot dir.
+do_configure:prepend () {
+      install -m 644 ${WORKDIR}/rv1126_tee_ta_v1.12.bin ${B}/tee.bin
+}
+
+DEPENDS += " flex-native bison-native bc-native dtc-native python3-setuptools-native"
