@@ -12,4 +12,4 @@ SERIAL_CONSOLES = "1500000;ttyS2"
 KBUILD_DEFCONFIG ?= "multi_v7_defconfig"
 KERNEL_IMAGETYPE = "zImage"
 
-UBOOT_SUFFIX ?= "img"
+UBOOT_SUFFIX ?= "itb"
