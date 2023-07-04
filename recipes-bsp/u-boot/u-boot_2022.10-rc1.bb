@@ -5,14 +5,14 @@ LIC_FILES_CHKSUM = "file://Licenses/README;md5=2ca5f2c35c8cc335f0a19756634782f1"
 
 require recipes-bsp/u-boot/u-boot.inc
 
-UBOOT_BRANCH ?= "master"
+UBOOT_BRANCH ?= "neu2a-v1"
 
 SRC_URI += " \
-	git://git@github.com/edgeble/u-boot-neu2k.git;protocol=ssh;branch=${UBOOT_BRANCH} \
+	git://git@github.com/edgeble/u-boot.git;protocol=ssh;branch=${UBOOT_BRANCH} \
 	file://rv1126_tee_ta_v1.12.bin \
 	"
 
-SRCREV = "319cee2d2723f77896d2b16f128846062f94d13a"
+SRCREV = "e1fb5a4ac1c540bfdd84b3eeaa13db890e34cfaf"
 
 S = "${WORKDIR}/git"
 B = "${WORKDIR}/build"
