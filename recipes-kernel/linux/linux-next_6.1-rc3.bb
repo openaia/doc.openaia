@@ -7,13 +7,13 @@ require recipes-kernel/linux/linux-yocto.inc
 
 inherit kernel
 
-LINUX_BRANCH ?= "master"
+LINUX_BRANCH ?= "neu2a-6.1"
 
 SRC_URI = " \
 	git://git@github.com/edgeble/linux-neu2k.git;protocol=ssh;branch=${LINUX_BRANCH} \
 	file://rv1126-neu2.cfg \
 	"
-SRCREV = "14f3e178a256da47778ca72d42a7a6c5ccea1ae9"
+SRCREV = "e51b230f3c99b923e60195b6d16214f4eaea9bf4"
 
 S = "${WORKDIR}/git"
 B = "${WORKDIR}/build"
