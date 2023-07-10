@@ -10,6 +10,7 @@ inherit kernel
 SRC_URI = " \
 	git://git@github.com/edgeble/kernel.git;protocol=ssh;branch=neu2a-4.19 \
 	file://${THISDIR}/files/cgroups.cfg \
+	file://${THISDIR}/files/0001-scripts-dtc-fix-build-error-about-yylloc.patch \
 "
 
 SRCREV = "f5afcaa98fce01573421a7aa8d2c6d93b3ad8083"
