@@ -10,6 +10,7 @@ UBOOT_BRANCH ?= "neu2a-v1"
 SRC_URI += " \
 	git://git@github.com/edgeble/u-boot.git;protocol=ssh;branch=${UBOOT_BRANCH} \
 	file://${THISDIR}/files/rv1126_tee_ta_v1.12.bin \
+	file://${THISDIR}/files/0001-ARM-dts-rockchip-rv1126-Use-115200-baudrate.patch \
 	"
 
 SRCREV = "319cee2d2723f77896d2b16f128846062f94d13a"
