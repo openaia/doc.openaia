@@ -10,10 +10,11 @@ inherit kernel
 SRC_URI = " \
 	git://git@github.com/edgeble/kernel.git;protocol=ssh;branch=neu2a-4.19 \
 	file://${THISDIR}/files/cgroups.cfg \
-	file://${THISDIR}/files/0001-scripts-dtc-fix-build-error-about-yylloc.patch \
+	file://${THISDIR}/files/0001-ARM-dts-rockchip-rv1126-Add-uart2-for-Neu2A-IO.patch \
+	file://${THISDIR}/files/0002-scripts-dtc-fix-build-error-about-yylloc.patch \
 "
 
-SRCREV = "f5afcaa98fce01573421a7aa8d2c6d93b3ad8083"
+SRCREV = "2818dcac8200d5b554c156aad70a14abab474342"
 
 S = "${WORKDIR}/git"
 B = "${WORKDIR}/build"

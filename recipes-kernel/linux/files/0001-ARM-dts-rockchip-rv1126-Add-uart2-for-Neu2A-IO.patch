@@ -1,0 +1,26 @@
+From f5afcaa98fce01573421a7aa8d2c6d93b3ad8083 Mon Sep 17 00:00:00 2001
+From: Jagan Teki <jagan@edgeble.ai>
+Date: Fri, 30 Jun 2023 18:55:01 +0530
+Subject: [PATCH] ARM: dts: rockchip: rv1126: Add uart2 for Neu2A-IO
+
+Signed-off-by: Jagan Teki <jagan@edgeble.ai>
+---
+ arch/arm/boot/dts/rv1126.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm/boot/dts/rv1126.dtsi b/arch/arm/boot/dts/rv1126.dtsi
+index 7a8d26fe1cb7..fc364449535c 100644
+--- a/arch/arm/boot/dts/rv1126.dtsi
++++ b/arch/arm/boot/dts/rv1126.dtsi
+@@ -282,7 +282,7 @@
+ 		rockchip,serial-id = <2>;
+ 		rockchip,wake-irq = <0>;
+ 		rockchip,irq-mode-enable = <0>;
+-		rockchip,baudrate = <1500000>;  /* Only 115200 and 1500000 */
++		rockchip,baudrate = <115200>;  /* Only 115200 and 1500000 */
+ 		interrupts = <GIC_SPI 93 IRQ_TYPE_LEVEL_HIGH>;
+ 		status = "disabled";
+ 	};
+-- 
+2.25.1
+
