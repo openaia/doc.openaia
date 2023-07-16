@@ -1,0 +1,40 @@
+From e1fb5a4ac1c540bfdd84b3eeaa13db890e34cfaf Mon Sep 17 00:00:00 2001
+From: Jagan Teki <jagan@edgeble.ai>
+Date: Sat, 3 Jun 2023 16:07:23 +0530
+Subject: [PATCH] ARM: dts: rockchip: rv1126: Use 115200 baudrate
+
+Signed-off-by: Jagan Teki <jagan@edgeble.ai>
+---
+ arch/arm/dts/rv1126-edgeble-neu2-io.dts | 2 +-
+ configs/neu2-io-rv1126_defconfig        | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/arch/arm/dts/rv1126-edgeble-neu2-io.dts b/arch/arm/dts/rv1126-edgeble-neu2-io.dts
+index ae1cf34423..09f0106378 100644
+--- a/arch/arm/dts/rv1126-edgeble-neu2-io.dts
++++ b/arch/arm/dts/rv1126-edgeble-neu2-io.dts
+@@ -14,7 +14,7 @@
+ 		     "edgeble,neural-compute-module-2", "rockchip,rv1126";
+ 
+ 	chosen {
+-		stdout-path = "serial2:1500000n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+ };
+ 
+diff --git a/configs/neu2-io-rv1126_defconfig b/configs/neu2-io-rv1126_defconfig
+index cd4321dc69..0431b84634 100644
+--- a/configs/neu2-io-rv1126_defconfig
++++ b/configs/neu2-io-rv1126_defconfig
+@@ -49,7 +49,7 @@ CONFIG_MMC_DW_ROCKCHIP=y
+ CONFIG_REGULATOR_PWM=y
+ CONFIG_PWM_ROCKCHIP=y
+ # CONFIG_RAM_ROCKCHIP_DEBUG is not set
+-CONFIG_BAUDRATE=1500000
++CONFIG_BAUDRATE=115200
+ CONFIG_DEBUG_UART_SHIFT=2
+ CONFIG_SYSRESET=y
+ # CONFIG_TPL_SYSRESET is not set
+-- 
+2.25.1
+
