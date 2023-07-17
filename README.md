@@ -14,6 +14,8 @@ II. [Configure Yocto](https://github.com/edgeble/meta-neu6b#configure-yoctooe)
 
 III. [Build Yocto](https://github.com/edgeble/meta-neu6b#building-meta--bsp-layers)
 
+IV. [Build Linux](https://github.com/edgeble/meta-neu6b#build-linux)
+
 ## Build Host
 To install the required packages on a Debian based distribution (Ubuntu etc) run
 
@@ -106,6 +108,23 @@ If you want to boot the image on microSD card the follow below steps.
 ```shell
 cd tmp-glibc/deploy/images/\<MACHINE\>
 sudo bmaptool copy --bmap core-image-full-cmdline-neu2a-io.wic.bmap core-image-full-cmdline-neu2a-io.wic.xz /dev/sdX
+```
+## Build linux
+
+Manual build of kernel with yocto toolchain would be helpful to test any sources before intigrating into yocto.
+
+Configure kernel
+
+```shell
+cd build/tmp-glibc/work/neu2a_io-oe-linux-gnueabi/linux-kernel-neu2a/4.19-r0/git
+make ARCH=arm rv1126_defconfig
+```
+
+Build kernel
+```shell
+cd build/tmp-glibc/work/neu2a_io-oe-linux-gnueabi/linux-kernel-neu2a/4.19-r0/recipe-sysroot-native/usr/bin/arm-oe-linux-gnueabi
+export CROSS_COMPILE=$PWD/arm-oe-linux-gnueabi-
+make ARCH=arm CC=$PWD/arm-oe-linux-gnueabi-gcc dtbs zImage -j 16
 ```
 
 ## Maintainers
