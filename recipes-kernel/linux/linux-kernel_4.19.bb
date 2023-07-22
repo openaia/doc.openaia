@@ -13,7 +13,7 @@ SRC_URI = " \
 	file://${THISDIR}/files/0002-scripts-dtc-fix-build-error-about-yylloc.patch \
 "
 
-SRCREV = "f9f32d413126abe75b31e1b8c894b6ed2b3f6a91"
+SRCREV = "641938a45374c5983aa6141cb6611d407fedeb57"
 
 S = "${WORKDIR}/git"
 B = "${WORKDIR}/build"
