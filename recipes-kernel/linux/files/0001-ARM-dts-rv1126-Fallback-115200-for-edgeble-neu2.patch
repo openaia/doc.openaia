@@ -1,0 +1,26 @@
+From 592ed5381f9cbeb5aa8fd059046321302bf1527a Mon Sep 17 00:00:00 2001
+From: Jagan Teki <jagan@edgeble.ai>
+Date: Sat, 29 Jul 2023 23:48:09 +0530
+Subject: [PATCH] ARM: dts: rv1126: Fallback 115200 for edgeble-neu2
+
+Signed-off-by: Jagan Teki <jagan@edgeble.ai>
+---
+ arch/arm/boot/dts/rockchip/rv1126-edgeble-neu2-io.dts | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm/boot/dts/rockchip/rv1126-edgeble-neu2-io.dts b/arch/arm/boot/dts/rockchip/rv1126-edgeble-neu2-io.dts
+index 219db33c95db..d49d9dfe0dbc 100644
+--- a/arch/arm/boot/dts/rockchip/rv1126-edgeble-neu2-io.dts
++++ b/arch/arm/boot/dts/rockchip/rv1126-edgeble-neu2-io.dts
+@@ -18,7 +18,7 @@ aliases {
+ 	};
+ 
+ 	chosen {
+-		stdout-path = "serial2:1500000n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+ 
+ 	vcc12v_dcin: vcc12v-dcin-regulator {
+-- 
+2.25.1
+
