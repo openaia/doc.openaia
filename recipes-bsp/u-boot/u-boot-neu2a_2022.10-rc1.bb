@@ -13,7 +13,7 @@ SRC_URI += " \
 	file://0001-ARM-dts-rockchip-rv1126-Use-115200-baudrate.patch \
 	"
 
-SRCREV = "319cee2d2723f77896d2b16f128846062f94d13a"
+SRCREV = "8d739ba0238fa92fc78376fbab084e1b31e26e70"
 
 S = "${WORKDIR}/git"
 B = "${WORKDIR}/build"
