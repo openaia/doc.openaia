@@ -1,5 +1,8 @@
 # meta-neu6b
 
+![Build](https://github.com/edgeble/meta-neu6b/actions/workflows/neu2a-v2-kirkstone.yml/badge.svg)
+[![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg?style=flat)](https://github.com/edgeble/meta-neu6b/releases)
+
 Yocto BSP layer for the Edgeble Neural Compute Accelerator Modules - https://www.edgeble.ai/
 
 This project is based on upstream - https://git.yoctoproject.org/meta-rockchip
