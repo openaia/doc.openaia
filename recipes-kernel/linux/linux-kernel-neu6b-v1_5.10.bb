@@ -10,6 +10,7 @@ inherit kernel
 SRC_URI = " \
 	git://git@github.com/edgeble/kernel.git;protocol=ssh;branch=linux-5.10-gen-rkr3.4 \
 	file://${THISDIR}/files/cgroups.cfg \
+	file://${THISDIR}/files/disable-broadcom-wlan.cfg \
 "
 
 SRCREV = "5e04300cb2510aa9168c1640ee94a1be83bc8cc1"
