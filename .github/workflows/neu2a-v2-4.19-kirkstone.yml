@@ -1,0 +1,64 @@
+name: Neu2A-V2 4.19 CI Runner
+
+on:
+  push:
+    branches:
+      - kirkstone
+
+jobs:
+  build:
+    name: neu2a-v2-4.19 kirkstone
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Clone repos
+        run: |
+          cd ${{ runner.workspace }}
+          [ -d 'bitbake' ] && rm -rf bitbake && git clone git://git.openembedded.org/bitbake -b master
+          [ -d 'openembedded-core' ] && rm -rf openembedded-core && git clone git://git.openembedded.org/openembedded-core -b kirkstone
+          [ -d 'meta-openembedded' ] && rm -rf meta-openembedded && git clone git://git.openembedded.org/meta-openembedded -b kirkstone
+          [ -d 'meta-arm' ] && rm -rf meta-arm && git clone git://git.yoctoproject.org/meta-arm -b kirkstone
+
+      - name: Configure machine
+        run: |
+          cd ${{ runner.workspace }}
+          source openembedded-core/oe-init-build-env build
+          echo 'MACHINE ??= "neu2a-io"' >> conf/local.conf
+          echo 'INIT_MANAGER = "systemd"' >> conf/local.conf
+          echo 'DISTRO_FEATURES:append = " bluetooth wifi"' >> conf/local.conf
+
+      - name: Update bblayers.conf
+        run: |
+          cd ${{ runner.workspace }}
+          source openembedded-core/oe-init-build-env build
+          bitbake-layers add-layer ../openembedded-core/meta
+          bitbake-layers add-layer ../meta-arm/meta-arm-toolchain
+          bitbake-layers add-layer ../meta-arm/meta-arm
+          bitbake-layers add-layer ../meta-neu6b
+          bitbake-layers add-layer ../meta-openembedded/meta-oe
+          bitbake-layers add-layer ../meta-openembedded/meta-python
+          bitbake-layers add-layer ../meta-openembedded/meta-networking
+
+      - name: Use existing downloads
+        run: |
+          cd ${{ runner.workspace }}
+          source openembedded-core/oe-init-build-env build
+          [ -d 'downloads' ] && rm -rf downloads && git clone git@github.com:edgeble/downloads.git -b kirkstone
+
+      - name: bitbake core-image-minimal
+        run: |
+          cd ${{ runner.workspace }}
+          source openembedded-core/oe-init-build-env build
+          export LC_ALL="en_US.UTF-8"
+          bitbake core-image-minimal
+
+      - name: Upload output artifacts
+        uses: xresloader/upload-to-github-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          file: ${{ runner.workspace }}/build/tmp-glibc/deploy/images/neu2a-io/*wic*
+          draft: false
