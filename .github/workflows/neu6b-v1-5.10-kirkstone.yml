@@ -53,7 +53,7 @@ jobs:
           cd ${{ runner.workspace }}
           source openembedded-core/oe-init-build-env build
           export LC_ALL="en_US.UTF-8"
-          bitbake core-image-minimal
+          bitbake core-image-full-cmdline
 
       - name: Upload output artifacts
         uses: xresloader/upload-to-github-release@v1
