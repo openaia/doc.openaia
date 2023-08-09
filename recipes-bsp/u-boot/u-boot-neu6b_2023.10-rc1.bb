@@ -3,13 +3,10 @@ DESCRIPTION = "U-Boot 2022.10 neu6b-uboot"
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://Licenses/README;md5=2ca5f2c35c8cc335f0a19756634782f1"
 
-
 require recipes-bsp/u-boot/u-boot.inc
 
-UBOOT_BRANCH ?= "master"
-
 SRC_URI += " \
-	git://github.com/u-boot/u-boot.git;protocol=ssh;branch=${UBOOT_BRANCH} \
+	git://git@github.com/edgeble/u-boot.git;protocol=ssh;branch="neu6b-v2" \
 	file://rk3588_bl31_v1.40.elf \
 	file://rk3588_ddr_lp4_2112MHz_lp5_2736MHz_v1.12.bin \
 	"
