@@ -13,7 +13,7 @@ SRC_URI = " \
 	file://${THISDIR}/files/disable-broadcom-wlan.cfg \
 "
 
-SRCREV = "05727fe29f7d7097457b8d5a422d78fefb5e51ec"
+SRCREV = "4c3d545aa29e2c5bae6a6076e8e0dc6c5d40b5cf"
 
 S = "${WORKDIR}/git"
 B = "${WORKDIR}/build"
