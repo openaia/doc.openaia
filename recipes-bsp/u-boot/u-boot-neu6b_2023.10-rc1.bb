@@ -11,7 +11,7 @@ SRC_URI += " \
 	file://rk3588_ddr_lp4_2112MHz_lp5_2736MHz_v1.12.bin \
 	"
 
-SRCREV = "5bf1846af872a499dbb3b8dfbf9c7a72655fc650"
+SRCREV = "bc9406342bccd9ffd5137f42f07d390a2d4bf82b"
 
 S = "${WORKDIR}/git"
 B = "${WORKDIR}/build"
