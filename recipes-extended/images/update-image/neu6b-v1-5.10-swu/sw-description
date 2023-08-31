@@ -1,0 +1,58 @@
+software =
+{
+    version = "0.1.0";
+
+    neu6b-v1 = {
+    hardware-compatibility: ["1.0"];
+        stable : {
+            copy1 : {
+                images: ({
+                        filename = "core-image-full-cmdline-neu6b-v1-5.10-swu.ext4.gz";
+                        type = "raw";
+                        sha256 = "$swupdate_get_sha256(core-image-full-cmdline-neu6b-v1-5.10-swu.ext4.gz)";
+                        compressed = "zlib";
+                        device = "/dev/mmcblk1p8";
+                    }
+                );
+		        scripts: ({
+			            filename = "emmcsetup.lua";
+			            type = "lua";
+		             }
+                );
+                bootenv: ({
+                        name = "upgrade_available";
+                        value = "1";
+                    },
+                    {
+                        name = "bootcount";
+                        value = "3";
+                    }
+                );
+            };
+            copy2 : {
+                images: ({
+                        filename = "core-image-full-cmdline-neu6b-v1-5.10-swu.ext4.gz";
+                        type = "raw";
+                        sha256 = "$swupdate_get_sha256(core-image-full-cmdline-neu6b-v1-5.10-swu.ext4.gz)";
+                        compressed = "zlib";
+                        device = "/dev/mmcblk1p9";
+                    }
+                );
+		        scripts: ({
+			            filename = "emmcsetup.lua";
+			            type = "lua";
+		            }
+                );
+                bootenv: ({
+                        name = "upgrade_available";
+                        value = "1";
+                    },
+                    {
+                        name = "bootcount";
+                        value = "3";
+                    }
+                );
+            };
+        };
+    }
+}
