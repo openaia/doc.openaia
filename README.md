@@ -1,9 +1,9 @@
-# meta-neu6b
+# meta-openaia
 
-![Build](https://github.com/edgeble/meta-neu6b/actions/workflows/neu2a-v2-kirkstone.yml/badge.svg)
-[![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg?style=flat)](https://github.com/edgeble/meta-neu6b/releases)
+![Build](https://github.com/edgeble/meta-openaia/actions/workflows/neu2a-v2-kirkstone.yml/badge.svg)
+[![Github All Releases](https://img.shields.io/github/downloads/atom/atom/total.svg?style=flat)](https://github.com/edgeble/meta-openaia/releases)
 
-Yocto BSP layer for the Edgeble Neural Compute Accelerator Modules - https://www.edgeble.ai/
+Yocto BSP layer for the Edgeble OpenAIA - https://www.openaia.io
 
 This project is based on upstream - https://git.yoctoproject.org/meta-rockchip
 
@@ -11,11 +11,11 @@ Please see the corresponding sections below for details.
 
 ## Table of Contents
 
-I. [Build Host](https://github.com/edgeble/meta-neu6b#build-host)
+I. [Build Host](https://github.com/edgeble/meta-openaia#build-host)
 
-II. [Configure Yocto](https://github.com/edgeble/meta-neu6b#configure-yoctooe)
+II. [Configure Yocto](https://github.com/edgeble/meta-openaia#configure-yoctooe)
 
-III. [Build Yocto](https://github.com/edgeble/meta-neu6b#building-meta--bsp-layers)
+III. [Build Yocto](https://github.com/edgeble/meta-openaia#building-meta--bsp-layers)
 
 ## Build Host
 To install the required packages on a Debian based distribution (Ubuntu etc) run
@@ -37,10 +37,10 @@ In order to build an image with BSP support for a given release, you need to dow
 ~/yocto $ git clone git://git.openembedded.org/openembedded-core -b kirkstone
 ~/yocto $ git clone git://git.yoctoproject.org/meta-arm -b kirkstone
 ~/yocto $ git clone git://git.openembedded.org/meta-openembedded -b kirkstone
-~/yocto $ git clone git@github.com:edgeble/meta-neu6b.git -b kirkstone
+~/yocto $ git clone git@github.com:edgeble/meta-openaia.git -b kirkstone
 ```
 
-And put the meta-neu6b layer here too.
+And put the meta-openaia layer here too.
 
 Then you need to source the configuration script:
 
@@ -48,7 +48,7 @@ Then you need to source the configuration script:
 ~/yocto $ source openembedded-core/oe-init-build-env
 ```
 
-Having done that, you can build a image for a edgeble boards by adding the location of the meta-neu6b layer to bblayers.conf, along with any other layers needed.
+Having done that, you can build a image for a edgeble boards by adding the location of the meta-openaia layer to bblayers.conf, along with any other layers needed.
 
 For example:
 
@@ -58,10 +58,12 @@ BBLAYERS ?= " \
   ${TOPDIR}/../openembedded-core/meta\
   ${TOPDIR}/../meta-arm/meta-arm \
   ${TOPDIR}/../meta-arm/meta-arm-toolchain \
-  ${TOPDIR}/../meta-neu6b \
+  ${TOPDIR}/../meta-openaia \
   ${TOPDIR}/../meta-openembedded/meta-oe \
   ${TOPDIR}/../meta-openembedded/meta-python \
   ${TOPDIR}/../meta-openembedded/meta-networking \
+  ${TOPDIR}/../meta-swupdate \
+  ${TOPDIR}/../meta-swupdate-boards \
   "
 ```
 
@@ -90,10 +92,10 @@ This will prompt you for the passphrase for your WiFi.
 You may want to then edit the file to remove the clear-text passphrase:
 
 ```shell
-wpa_passphrase 'YOUR_SSID' >  ../meta-neu6b/recipes-connectivity/wpa-supplicant/files/wpa_supplicant-nl80211-wlan0.conf
+wpa_passphrase 'YOUR_SSID' >  ../meta-openaia/recipes-connectivity/wpa-supplicant/files/wpa_supplicant-nl80211-wlan0.conf
 ```
 
-All supported machines can be found in meta-neu6b/conf/machine.
+All supported machines can be found in meta-openaia/conf/machine.
 
 ## Building meta- BSP Layers
 
@@ -101,6 +103,10 @@ You should then be able to build a image as such:
 
 ```shell
 bitbake core-image-full-cmdline
+```
+
+```shell
+bitbake update-image
 ```
 
 At the end of a successful build, you should have an .wic image in /path/to/yocto/build/tmp-glibc/deploy/\<MACHINE\>/
@@ -113,5 +119,4 @@ sudo bmaptool copy --bmap core-image-full-cmdline-neu2a-io.wic.bmap core-image-f
 ```
 ## Maintainers
 
-* Anand Moon `<anand@edgeble.ai>`
 * Jagan Teki `<jagan@edgeble.ai>`
