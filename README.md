@@ -117,6 +117,38 @@ If you want to boot the image on microSD card the follow below steps.
 cd tmp-glibc/deploy/images/\<MACHINE\>
 sudo bmaptool copy --bmap core-image-full-cmdline-neu2a-io.wic.bmap core-image-full-cmdline-neu2a-io.wic.xz /dev/sdX
 ```
+## Configure and run swupdate using Hawkbit server
+
+A. Steps to run Hawkbit server latest  in our PC ;-
+
+1) clone the Hawkbit server repo.
+```shell
+$ cd $HOME
+$ git clone https://github.com/eclipse/hawkbit
+```
+2) Run the Hawkbit server using following command.
+```shell
+$ cd hawkbit
+$ sudo docker run -p 8080:8080 hawkbit/hawkbit-update-server:latest
+```
+
+3) Run hawkbit server using browser with following url format.
+```shell
+<your ip address>:8080/UI/#!deployment
+
+For example:  http://192.168.0.105:8080/UI/#!deployment
+```
+
+4) To access Hawkbit panel, enter username and password as admin.
+
+B. Command for swupdate to connect hawkbit server in the Board ;-
+
+```shell
+root@neu6b-v1-5:/# swupdate -H neu6b-v1:1.0 -e stable,copy2 -f /etc/swupdate.cfg -l 5 -u '-t DEFAULT -u http://<Hawkbit server ip Address>:8080 -i DeviceID'
+
+For example : root@neu6b-v1-5:/# swupdate -H neu6b-v1:1.0 -e stable,copy2 -f /etc/swupdate.cfg -l 5 -u '-t DEFAULT -u http://192.168.0.105:8080 -i DeviceID'
+
+```
 ## Maintainers
 
 * Jagan Teki `<jagan@edgeble.ai>`
