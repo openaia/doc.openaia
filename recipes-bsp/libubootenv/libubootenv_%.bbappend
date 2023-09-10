@@ -10,3 +10,5 @@ do_install:append:class-target() {
 }
 
 FILES:${PN}:append:class-target = " ${sysconfdir}"
+
+COMPATIBLE_MACHINE = "(neu6b-v1-5.10-swu)"
