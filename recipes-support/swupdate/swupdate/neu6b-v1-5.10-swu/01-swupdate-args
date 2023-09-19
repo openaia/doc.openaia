@@ -1,0 +1,14 @@
+source /etc/swupdate/swupdate.env
+
+rootfs=`swupdate -g`
+
+if [ $rootfs == '/dev/mmcblk1p8' ];then
+	selection="-e stable,copy2"
+else
+	selection="-e stable,copy1"
+fi
+
+SWUPDATE_SURICATTA_ARGS="-i neu6b-v1-${DEVICE_ID} -g d08218ddb0467031fe27208f430316d2"
+
+SWUPDATE_ARGS="-H neu6b-v1:1.0 ${selection} -f ${SWUPDATE_CONF_FILE} -l 5"
+
