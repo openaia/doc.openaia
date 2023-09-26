@@ -91,9 +91,9 @@ qthelp:
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
 	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
-	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/meta-raspberrypi.qhcp"
+	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/doc-meta-openaia.qhcp"
 	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/meta-raspberrypi.qhc"
+	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/doc-meta-openaia.qhc"
 
 .PHONY: applehelp
 applehelp:
@@ -110,8 +110,8 @@ devhelp:
 	@echo
 	@echo "Build finished."
 	@echo "To view the help file:"
-	@echo "# mkdir -p $$HOME/.local/share/devhelp/meta-raspberrypi"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/meta-raspberrypi"
+	@echo "# mkdir -p $$HOME/.local/share/devhelp/doc-meta-openaia"
+	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/doc-meta-openaia"
 	@echo "# devhelp"
 
 .PHONY: epub

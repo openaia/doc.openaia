@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# meta-raspberrypi documentation build configuration file, created by
+# doc-meta-openaia documentation build configuration file, created by
 # sphinx-quickstart on Tue May 23 09:51:24 2017.
 #
 # This file is execfile()d with the current directory set to its
@@ -49,9 +49,9 @@ source_suffix = ['.rst', '.md']
 master_doc = 'index'
 
 # General information about the project.
-project = 'meta-raspberrypi'
-copyright = '2022, meta-raspberrypi contributors'
-author = 'meta-raspberrypi contributors'
+project = 'doc-meta-openaia'
+copyright = '2023, doc-meta-openaia contributors'
+author = 'doc-meta-openaia contributors'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -134,7 +134,7 @@ todo_include_todos = False
 # The name for this set of Sphinx documents.
 # "<project> v<release> documentation" by default.
 #
-# html_title = 'meta-raspberrypi vmaster'
+# html_title = 'doc-meta-openaia vmaster'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #
@@ -234,7 +234,7 @@ todo_include_todos = False
 # html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'meta-raspberrypidoc'
+htmlhelp_basename = 'doc-meta-openaiadoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -260,8 +260,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'meta-raspberrypi.tex', 'meta-raspberrypi Documentation',
-     'meta-raspberrypi contributors', 'manual'),
+    (master_doc, 'doc-meta-openaia.tex', 'doc-meta-openaia Documentation',
+     'doc-meta-openaia contributors', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -302,7 +302,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'meta-raspberrypi', 'meta-raspberrypi Documentation',
+    (master_doc, 'doc-meta-openaia', 'doc-meta-openaia Documentation',
      [author], 1)
 ]
 
@@ -317,8 +317,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'meta-raspberrypi', 'meta-raspberrypi Documentation',
-     author, 'meta-raspberrypi', 'One line description of project.',
+    (master_doc, 'doc-meta-openaia', 'doc-meta-openaia Documentation',
+     author, 'doc-meta-openaia', 'One line description of project.',
      'Miscellaneous'),
 ]
 

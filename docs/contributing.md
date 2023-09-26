@@ -8,8 +8,8 @@ The main communication tool in use is the Yocto Project mailing list:
 * <https://lists.yoctoproject.org/g/yocto>
 
 Feel free to ask any kind of questions but please always prepend your email
-subject with `[meta-raspberrypi]` as this is the global *Yocto* mailing
-list and not a dedicated *meta-raspberrypi* mailing list.
+subject with `[doc-meta-openaia]` as this is the global *Yocto* mailing
+list and not a dedicated *doc-meta-openaia* mailing list.
 
 ## Formatting patches
 
@@ -45,7 +45,7 @@ a good component name is the following:
 * For changes that affect *other files*, i.e. under the `conf` directory,
   please use the full path as the component name, e.g. `conf/layer.conf`.
 * For changes that affect the *layer itself* and do not fall into any of
-  the above cases, please use `meta-raspberrypi` as the component name.
+  the above cases, please use `doc-meta-openaia` as the component name.
 
 A full example of a suitable commit log message is below:
 
@@ -74,13 +74,13 @@ the above formatting guidelines carefully before sending your patches.
 The preferred method to contribute to this project is to send pull
 requests to the GitHub mirror of the layer:
 
-* <https://github.com/agherzan/meta-raspberrypi>
+* <https://github.com/agherzan/doc-meta-openaia>
 
 **In addition**, you may send patches for review to the above specified
 mailing list. In this case, when creating patches using `git` please make
 sure to use the following formatting for the message subject:
 
-    git format-patch -s --subject-prefix='meta-raspberrypi][PATCH' origin
+    git format-patch -s --subject-prefix='doc-meta-openaia][PATCH' origin
 
 Then, for sending patches to the mailing list, you may use this command:
 
@@ -95,7 +95,7 @@ workflows. This process happens periodically.
 In order to manage and track the layer issues more efficiently, the
 GitHub issues facility is used by this project:
 
-* <https://github.com/agherzan/meta-raspberrypi/issues>
+* <https://github.com/agherzan/doc-meta-openaia/issues>
 
 If you submit patches that have a GitHub issue associated, please make sure to
 use standard GitHub keywords, e.g. `closes`, `resolves` or `fixes`, before the

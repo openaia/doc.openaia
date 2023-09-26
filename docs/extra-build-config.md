@@ -225,7 +225,7 @@ local.conf:
 NOTE: To get this working the overlay for the PiTFT model must be build, added
 and specified as well (dtoverlay=<driver> in config.txt).
 
-Below is a list of currently supported PiTFT models in meta-raspberrypi, the
+Below is a list of currently supported PiTFT models in doc-meta-openaia, the
 modelname should be added as a MACHINE_FEATURES in local.conf like below:
 
     MACHINE_FEATURES += "pitft <modelname>"
