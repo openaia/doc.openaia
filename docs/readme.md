@@ -1,1 +1,1 @@
-../swupdate-usinghawkbit.md
+../README.md
